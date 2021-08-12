@@ -6,7 +6,7 @@ namespace app\services;
 class AmoCrmService
 {
     public function funCurl ($body) {
-        $link = 'https://Domen.com/AmoCrmIntegration/integration';
+        $link = 'https://Domen.com/amo/tails';
         // $this->funCurl2($body);
         $curl = curl_init(); #Сохраняем дескриптор сеанса cURL
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
