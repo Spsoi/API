@@ -8,8 +8,8 @@ class AmoElementAddAfter // любое имя
 {
     function OnAfterIBlockElementAddHandler(&$arFields) // любое имя
     {
-        global $USER;
-        $ID = $USER->GetID();
+        global $USER; // глобалка
+        $ID = $USER->GetID(); // получаем ID юзера
         $rsUser = CUser::GetByID($ID);   // return array
         $arUser = $rsUser->Fetch();                 //return bject
             
