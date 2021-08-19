@@ -1,5 +1,5 @@
 <?php
-
+// после оформление заказа
 AddEventHandler("sale", "OnOrderAdd", array("AmoAfterUserRegister", "OnAfterIBlockElementAddHandler")); // кастом
 
 class AmoAfterUserRegister
