@@ -18,8 +18,7 @@ class CustomEventHandlersClass{
 	            self::SendNewPass($lid, $arFields);
 	            break;
 	    }
-
-        //if(( in_array($messageId, array(81, 92) ) || $event == 'NEW_USER' ) && $arFields["PERSONAL_GROUP"]!="Розничный покупатель"){
+		
         if( in_array($messageId, array(92))){
 	       self::AddPriceListFileForMail($event, $lid, $arFields, $messageId, $files, $languageId);
 	    }
