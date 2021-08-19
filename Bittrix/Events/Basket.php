@@ -1,4 +1,5 @@
 <?php
+// https://dev.1c-bitrix.ru/api_help/sale/events/events_basket.php
 // После добавления в корзину
 AddEventHandler("sale", "OnBasketAdd", array("AmoElementAddAfter", "OnAfterIBlockElementAddHandler")); // кастом
 // Изменение корзины
