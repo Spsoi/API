@@ -27,7 +27,7 @@ class Curl
 
         $request = json_encode($data);
         $curl = curl_init();
-        curl_setopt($curl, CURLOPT_URL, 'https://webhook.site/17ed4399-2199-4e54-916f-b127ccb29088');
+        curl_setopt($curl, CURLOPT_URL, 'host.ru');
         curl_setopt($curl, CURLOPT_RETURNTRANSFER,true);
         curl_setopt($curl, CURLOPT_TIMEOUT_MS, 1100);
         curl_setopt($curl, CURLOPT_POST, true);
