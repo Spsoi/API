@@ -1,0 +1,6 @@
+# BEGIN INTEGRATION AMOCRM
+AddDefaultCharset utf8
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^wp-content/path/.*?$ /wp-content/path/index.php [L]
+# EMD INTEGRATION AMOCRM
