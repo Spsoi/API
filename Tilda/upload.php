@@ -9,7 +9,7 @@ class UploadTildaJs
 
     public function __construct()
     {
-        $this->l = logger('crm/AMOCRM');
+        $this->l = logger('bla/bla');
     }
 
     public function uploadJs()
