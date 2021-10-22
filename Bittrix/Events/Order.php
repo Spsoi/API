@@ -38,3 +38,35 @@ class Curl
         return $result;
     }
 }
+// Получение заказа из карзины
+$eventManager = EventManager::getInstance();
+$eventManager->addEventHandler(
+    "sale",
+    "OnSaleOrderSaved",
+    "AmoSaleOrderAjaxHandler"
+);
+
+function AmoSaleOrderAjaxHandler(Main\Event $event)
+{
+    $order = $event->getParameter("ENTITY");
+    $oldValues = $event->getParameter("VALUES");
+    $isNew = $event->getParameter("IS_NEW");
+
+    if ($isNew) {
+        $sum = $order->getPrice();
+        $data = [
+            'request' => $_REQUEST,
+            'server' => $_SERVER,
+            'cookies' => $_COOKIE,
+            'order' => $order,
+            'oldValues' => $oldValues,
+            'isNew' => $isNew,
+            'sum' => $sum,
+            'propertyCollection' => $order->getPropertyCollection(),
+            'basket' => $order->getBasket(),
+            'myorderid' => $order->getId()
+        ];
+        $curl = new myCurl;
+        $req = $curl->WebHook($data);
+    }
+}
